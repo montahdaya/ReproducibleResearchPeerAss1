@@ -2,7 +2,13 @@
 title: "PA1_Template"
 author: 'Montassar H''Daya : Montassar.hdaya@gmail.com'
 date: "March 14, 2015"
-output: pdf_document
+output:
+  html_document:
+    fig_caption: yes
+    highlight: monochrome
+    keep_md: yes
+    theme: united
+    toc: yes
 ---
 
 **1.Load the data**
@@ -148,8 +154,6 @@ rawSteps[stepsNA] <- meanColumn[stepsNA]
 ```{r}
 datNew <- dat
 datNew$steps <- rawSteps
-datNew
-
 
 # First split up the data frame for steps by day
 stepsSplitNew <- split(datNew$steps, dates$yday)
